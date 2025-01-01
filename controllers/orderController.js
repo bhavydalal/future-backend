@@ -325,7 +325,6 @@ const verifyRazorpay = async (req, res) => {
 
     if (orderInfo.status === "paid") {
       const order = await orderModel.findById(orderInfo.receipt);
-      console.log(order);
 
       if (!order) {
         return res
