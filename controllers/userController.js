@@ -41,7 +41,7 @@ const forgotPassword = async (req, res) => {
       from: process.env.EMAIL_USER,
       to: email,
       subject: "Password Reset Request",
-      text: `Click the following link to reset your password: http://localhost:5173/reset-password?token=${token}`,
+      text: `Click the following link to reset your password: http://futrclo.in/reset-password?token=${token}`,
     };
 
     await transporter.sendMail(mailOptions);
@@ -53,9 +53,8 @@ const forgotPassword = async (req, res) => {
   }
 };
 
-
 const resetPassword = async (req, res) => {
-  console.log('res', res)
+  console.log("res", res);
   try {
     const { token, newPassword } = req.body;
 
@@ -110,7 +109,6 @@ const resetPassword = async (req, res) => {
     });
   }
 };
-
 
 // Route for user login
 const loginUser = async (req, res) => {
