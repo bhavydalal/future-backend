@@ -98,7 +98,7 @@ const placeOrder = async (req, res) => {
                   <p style="font-size: 14px; color: #555; text-align: center;">We hope you enjoy your purchase!</p>
               </div>
               <div style="background-color: #f4f4f4; text-align: center; padding: 10px; font-size: 14px; color: #777;">
-                  <p style="margin: 0;">&copy; 2024 FUTRCLO. All rights reserved.</p>
+                  <p style="margin: 0;">&copy; 2025 FUTRCLO. All rights reserved.</p>
               </div>
           </div>
       `,
@@ -184,7 +184,7 @@ const placeOrder = async (req, res) => {
             <hr style="border: none; border-top: 1px solid #ddd; margin: 20px 0;">
           </div>
           <div style="background-color: #f4f4f4; text-align: center; padding: 10px; font-size: 14px; color: #777;">
-            <p style="margin: 0;">&copy; 2024 FUTRCLO. All rights reserved.</p>
+            <p style="margin: 0;">&copy; 2025 FUTRCLO. All rights reserved.</p>
           </div>
         </div>
       `,
@@ -405,7 +405,7 @@ const verifyRazorpay = async (req, res) => {
                     <p style="font-size: 14px; color: #555; text-align: center;">We hope you enjoy your purchase!</p>
                 </div>
                 <div style="background-color: #f4f4f4; text-align: center; padding: 10px; font-size: 14px; color: #777;">
-                    <p style="margin: 0;">&copy; 2024 FUTRCLO. All rights reserved.</p>
+                    <p style="margin: 0;">&copy; 2025 FUTRCLO. All rights reserved.</p>
                 </div>
             </div>
         `,
@@ -491,7 +491,7 @@ const verifyRazorpay = async (req, res) => {
         <hr style="border: none; border-top: 1px solid #ddd; margin: 20px 0;">
       </div>
       <div style="background-color: #f4f4f4; text-align: center; padding: 10px; font-size: 14px; color: #777;">
-        <p style="margin: 0;">&copy; 2024 FUTRCLO. All rights reserved.</p>
+        <p style="margin: 0;">&copy; 2025 FUTRCLO. All rights reserved.</p>
       </div>
     </div>
   `,
