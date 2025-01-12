@@ -15,7 +15,6 @@ const razorpayInstance = new razorpay({
   key_id: process.env.RAZORPAY_KEY_ID,
   key_secret: process.env.RAZORPAY_KEY_SECRET,
 });
-
 // Placing orders using COD Method
 const placeOrder = async (req, res) => {
   try {
@@ -41,7 +40,9 @@ const placeOrder = async (req, res) => {
 
     // Fetch user's email from the database
     const user = await userModel.findById(userId);
-    const userEmail = user.email;
+    const userEmail = orderData.address.email;
+    const Name = orderData.address.firstName + " " + orderData.address.lastName;
+
     // Set up nodemailer transporter
     const transporter = nodemailer.createTransport({
       host: "smtp.gmail.com",
@@ -150,8 +151,8 @@ const placeOrder = async (req, res) => {
             <hr style="border: none; border-top: 1px solid #ddd; margin: 20px 0;">
             <h3 style="color: #333; margin-bottom: 10px;">Customer Details:</h3>
             <p style="font-size: 14px; color: #555;">
-              <strong>Name:</strong> ${user.name || "N/A"}<br>
-              <strong>Email:</strong> ${user.email || "N/A"}<br>
+              <strong>Name:</strong> ${Name || "N/A"}<br>
+              <strong>Email:</strong> ${userEmail || "N/A"}<br>
               <strong>Phone:</strong> ${phone || "N/A"}<br>
               <strong>Order Date:</strong> ${
                 newOrder.date
@@ -346,8 +347,9 @@ const verifyRazorpay = async (req, res) => {
 
       // Fetch user's email
       const user = await userModel.findById(userId);
-      const userEmail = user.email;
-
+      const userEmail = order.address.email;
+      const Name = order.address.firstName + " " + order.address.lastName;
+      console.log("userEmail");
       // Set up nodemailer transporter
       const transporter = nodemailer.createTransport({
         host: "smtp.gmail.com",
@@ -459,8 +461,8 @@ const verifyRazorpay = async (req, res) => {
         <hr style="border: none; border-top: 1px solid #ddd; margin: 20px 0;">
         <h3 style="color: #333; margin-bottom: 10px;">Customer Details:</h3>
         <p style="font-size: 14px; color: #555;">
-          <strong>Name:</strong> ${user.name || "N/A"}<br>
-          <strong>Email:</strong> ${user.email || "N/A"}<br>
+          <strong>Name:</strong> ${Name || "N/A"}<br>
+          <strong>Email:</strong> ${userEmail || "N/A"}<br>
           <strong>Phone:</strong> ${address.phone || "N/A"}<br>
           <strong>Order Date:</strong> ${new Date(
             order.date
